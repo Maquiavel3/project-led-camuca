@@ -104,13 +104,8 @@ void loop() {
       mudou = false;
     } else {
       ultimoCmd = cmd;
-      Serial.print("Protocolo: ");
-      Serial.println(getProtocolString(IrReceiver.decodedIRData.protocol));
-      Serial.print("Endereco: 0x");
-      Serial.println(IrReceiver.decodedIRData.address, HEX);
       Serial.print("Comando: 0x");
-      Serial.println(IrReceiver.decodedIRData.command, HEX);
-      Serial.println();
+      Serial.println(cmd, HEX);
 
       switch (cmd) {
         case CMD_DESLIGAR:  fitaLed.desligar(); break;
